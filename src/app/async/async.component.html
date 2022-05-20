@@ -1,0 +1,4 @@
+<div *ngIf="!(this.setupReadyHook | async)">
+    <p>loading...</p>
+</div>
+<p>{{ this.body }}</p>

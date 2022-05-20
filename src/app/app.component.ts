@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'init-async';
+
+  constructor(private readonly router: Router) { }
+
+  async onClickAsync() {
+    await this.router.navigate(['/async']);
+  }
+
+  async onClickSync() {
+    await this.router.navigate(['/sync'])
+  }
 }
